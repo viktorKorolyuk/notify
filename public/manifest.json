@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Notify"
+  "name": "Notify - Onchain messages through tokens",
   "icons": [
     {
       "src": "favicon.ico",
