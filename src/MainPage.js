@@ -126,7 +126,7 @@ class MainPage extends Component {
     const haveFields = (recipient && message);
     const btnColor = (haveFields) ? 'cyan' : 'red';
     const validAddress = recipient && isAddress(recipient)
-    const recipientStyle = (recipient && !validAddress) ? {color: 'red'} : {}
+    const recipientStyle = (recipient && !validAddress) ? {color: '#dc004e'} : {}
 
     const gridItemStyle = {paddingLeft:0}
     const textFieldStyle = createMuiTheme({
