@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+import { TextField, MuiThemeProvider } from '@material-ui/core';
 import InputLabel from '@material-ui/core/InputLabel';
 import Typography from "@material-ui/core/Typography";
 import Select from '@material-ui/core/Select';
@@ -23,6 +23,7 @@ import { isAddress, toContract } from "./Notify";
 import './MainPage.css';
 
 import Web3ReactContext from './Web3ReactContext'
+import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core';
 
 const injected = new InjectedConnector({
   supportedChainIds: [1, 3]
@@ -126,25 +127,68 @@ class MainPage extends Component {
     const btnColor = (haveFields) ? 'cyan' : 'red';
     const validAddress = recipient && isAddress(recipient)
     const recipientStyle = (recipient && !validAddress) ? {color: 'red'} : {}
-    return <Grid
+
+    const gridItemStyle = {paddingLeft:0}
+    const textFieldStyle = createMuiTheme({
+      overrides:{
+        MuiInputBase:{
+          root:{
+            background:"white",
+          },
+        },
+        MuiOutlinedInput:{
+          input:{
+            fontSize: 18,
+            padding: "1rem",
+          },
+          notchedOutline:{
+            border:"1px solid",
+            borderColor:"transparent"
+          }
+        },
+      },
+      palette:{
+        primary:{
+          main:"#5ABF90"
+        }
+      }
+    })
+
+    return (
+      <MuiThemeProvider theme={textFieldStyle}>
+      <Grid
       container
       spacing={2}
       direction="column"
-      alignItems="center"
       justify="center"
       className="msg-form"
       wrap={"nowrap"}
       style={{ maxWidth: '100%', margin: 0 }}
+      className="form-grid"
     >
-      <Grid item  xs={12}>
-        <TextField
-          id='recipient'
-          placeholder="Recipient address" //  or ENS domain
-          value={recipient}
-          onChange={this.handleChange}
-          style={{ width: 500 }}
-          inputProps={{ maxLength: 42, style: recipientStyle }}
-          variant='outlined'
+    <Grid item  xs={12} style={gridItemStyle}>
+
+      <TextField
+        id='recipient'
+        placeholder="Sender address" //  or ENS domain
+        value={recipient} // Proposal: This value should be populated with the senders address. This way the user can change their web3 address if needed
+        onChange={this.handleChange}
+        style={{ width: "100%" }}
+        inputProps={{ maxLength: 42, style: recipientStyle }}
+        variant='outlined'
+        disabled={true}
+      />
+
+    </Grid>
+    <Grid item  xs={12} style={gridItemStyle}>
+      <TextField
+        id='recipient'
+        placeholder="Recipient address" //  or ENS domain
+        value={recipient}
+        onChange={this.handleChange}
+        style={{ width: "100%" }}
+        inputProps={{ maxLength: 42, style: recipientStyle }}
+        variant='outlined'
         />
       </Grid>
       {/* <Grid item  xs={5}>
@@ -158,28 +202,31 @@ class MainPage extends Component {
           variant='outlined'
         />
       </Grid> */}
-      <Grid item xs={5}>
+      <Grid item xs={12} style={gridItemStyle}>
         <TextField
           id='message'
           placeholder="Message to send"
           value={message}
           onChange={this.handleChange}
-          style={{ width: 500 }}
-          inputProps={{maxLength: 32}}
+          style={{ width: "100%" }}
+          inputProps={{maxLength: 42}}
           variant='outlined'
         />
       </Grid>
-      <Grid item xs={5}>
+      <Grid item xs={12} style={gridItemStyle}>
         <Button
-          style={{ width: 500, backgroundColor: btnColor }}
           size='large'
           disabled={!(haveFields && validAddress)}
           onClick={this.doNotify}
+          className="submit-button"
+          variant="contained"
+          color="primary"
         >
           Notify!
         </Button>
       </Grid>
     </Grid>
+    </MuiThemeProvider>)
   }
 
   renderError = () => {

@@ -1,30 +1,85 @@
 .main {
+  --purple_dark: #232B59;
+  --purple_light: #7378D9;
+  --green_light: #5ABF90;
+  --border_radius: 4px;
+
   display: flex;
   flex-wrap: nowrap;
+
   flex-direction: column;
-  max-width: 100vw;
-  max-height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+
   margin: 0;
   padding: 0;
 }
 
-.main > .footer {
-  color: rgb(0, 0, 0);
+.main .footer {
+  position: absolute;
   text-align: center;
   margin: 0;
-  margin-bottom: 50px;
-  margin-top: 250px;
+  bottom: 1em;
 }
 
-.main > .banner {
-  color: darkblue;
-  text-align: center;
-  margin: 0;
-  margin-bottom: 50px;
-  margin-top: 50px;
+.main .banner {
+
+  display: flex;
+  width: 60vw;
+  height: 60vh;
+
+  color: white;
+  background: var(--purple_light);
+
+  border-radius: var(--border_radius);
+  box-shadow: 0px 0px 6px #aaa;
+  overflow: hidden;
 }
 
-.banner-msg {
-  margin-top: 50px;
-  width: 450px;
+
+.main .banner .introduction .header {
+  position: relative;
+  font-weight: bold;
+  margin-bottom: 25px !important;
+}
+
+/* Adds an underline to the header text */
+.main .banner .introduction .header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+
+  width: 60%;
+  max-width: 10em;
+  height: 2px;
+
+  background: white;
+}
+
+.main .banner-block {
+  width: 10vw;
+  height: 100%;
+  background: var(--purple_dark);
+}
+
+.main .content {
+  position: relative;
+
+  display: flex;
+  padding: 2rem;
+  width: 60%;
+
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer a {
+  color: var(--purple_light);
+}
+}
+
 }

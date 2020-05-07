@@ -28,32 +28,26 @@ export default class App extends Component {
     return (
       <div className="main">
         <div className="banner">
-        <Typography variant="h3">
-          Welcome to Notify
-        </Typography>
-        <Grid
-          container
-          spacing={2}
-          direction="column"
-          alignItems="center"
-          justify="center"
-          style={{ maxWidth: '100%', margin: 0 }}
-        >
-          <Grid item>
-            <Typography variant="h5" className="banner-msg">
-              Just put in the address you want to notify and a message, then hit Notify! and they'll get the notification as a token.
-            </Typography>
-          </Grid>
-        </Grid>
+          <div className="banner-block"></div>
+          <div className="content">
+            <div className="introduction">
+              <Typography variant="h3" className="header">
+                Welcome to Notify
+              </Typography>
+              <Typography variant="body1">
+                Just put in the address you want to notify and a message, then hit Notify! and they'll get the notification as a token.
+              </Typography>
+            </div>
+              <Web3ReactProvider getLibrary={getLibrary}>
+                  <MainPage />
+              </Web3ReactProvider>
+              {/* <MetaMaskContext.Provider immediate>
+                <MainPage />
+              </MetaMaskContext.Provider> */}
+          </div>
         </div>
-        <Web3ReactProvider getLibrary={getLibrary}>
-            <MainPage />
-        </Web3ReactProvider>
-        {/* <MetaMaskContext.Provider immediate>
-          <MainPage />
-        </MetaMaskContext.Provider> */}
         <div className="footer">
-          <Typography variant="h5">
+          <Typography variant="body1">
             Interested in using Notify for an application or service?
             <br />
             We'd love to <a target='_blank' href="https://twitter.com/0xNow">hear from you!</a>

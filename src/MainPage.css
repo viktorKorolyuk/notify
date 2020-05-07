@@ -4,7 +4,13 @@
   /* padding: 25px; */
 }
 
-.text-field {
-  font-size: 22pt;
-  width: 100%;
+.form-grid{
+  width: 80% !important;
+}
+
+.submit-button{
+  width: 70%;
+  /* background-color:var(--green_light) !important; */
+  color:white !important;
+  font-size: 20px !important;
 }
