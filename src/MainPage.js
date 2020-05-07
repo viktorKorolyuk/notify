@@ -169,12 +169,12 @@ class MainPage extends Component {
     <Grid item  xs={12} style={gridItemStyle}>
 
       <TextField
-        id='recipient'
-        placeholder="Sender address" //  or ENS domain
-        value={recipient} // Proposal: This value should be populated with the senders address. This way the user can change their web3 address if needed
+        id='sender'
+        placeholder="Sender address"
+        value={this.context.account} // This value is set to the senders address. This allows the user to change their address if needed
         onChange={this.handleChange}
         style={{ width: "100%" }}
-        inputProps={{ maxLength: 42, style: recipientStyle }}
+        inputProps={{ maxLength: 42 }}
         variant='outlined'
         disabled={true}
       />
