@@ -1,7 +1,13 @@
-.main > .msg-form {
+.main .msg-form {
+  position: absolute;
   /* margin: 2.5%; */
   /* height: 100%; */
   /* padding: 25px; */
+  display: block;
+  padding: 25px;
+  background: rgb(220, 0, 78);
+  border-radius: var(--border_radius);
+  box-shadow: 0px 0px 10px #555;
 }
 
 .form-grid{

@@ -118,7 +118,7 @@ class MainPage extends Component {
   }
 
   renderMM = () => {
-    return <Button variant='contained' onClick={this.requestMM}>Open MetaMask</Button>
+    return <Button variant='contained' color="secondary" onClick={this.requestMM}>Open MetaMask</Button>
   }
 
   renderNotifyForm = () => {
@@ -242,7 +242,8 @@ class MainPage extends Component {
       wrap={"nowrap"}
       style={{ maxWidth: '100%', margin: 0 }}
     >
-      <Typography variant='h5'>
+      <Typography variant="h5">Alert</Typography>
+      <Typography variant='body1'>
         { errorMsg }
       </Typography>
       {this.renderMM()}
