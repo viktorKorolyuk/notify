@@ -34,7 +34,7 @@ export default class App extends Component {
               <Typography variant="h3" className="header">
                 Welcome to Notify
               </Typography>
-              <Typography variant="body1">
+              <Typography variant="h6">
                 Just put in the address you want to notify and a message, then hit Notify! and they'll get the notification as a token.
               </Typography>
             </div>

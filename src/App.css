@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
 .main {
-  --purple_dark: #232B59;
-  --purple_light: #7378D9;
-  --green_light: #5ABF90;
+  --app_color_secondary: #006747;
+  --app_color_primary: #5ABF90;
+  --app_color_text: #767575;
   --border_radius: 4px;
 
   display: flex;
@@ -16,32 +18,33 @@
 
   margin: 0;
   padding: 0;
-}
 
-.main .footer {
-  position: absolute;
-  text-align: center;
-  bottom: 1em;
+  font-family: 'Roboto', sans-serif;
 }
 
 .main .banner {
-
   display: flex;
-  width: 60vw;
-  height: 60vh;
+  width: 70vw;
+  min-height: 65vh;
 
-  color: white;
-  background: var(--purple_light);
+  color: var(--app_color_text);
+  background: none;
 
+  border: 4px solid var(--app_color_primary);
   border-radius: var(--border_radius);
-  box-shadow: 0px 0px 6px #aaa;
+
+  box-sizing: border-box;
   overflow: hidden;
 }
 
+.main .banner .introduction {
+  width: 75%;
+  margin-bottom: 1rem;
+}
 
 .main .banner .introduction .header {
   position: relative;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 25px !important;
 }
 
@@ -53,32 +56,41 @@
   left: 0;
   bottom: -3px;
 
-  width: 60%;
+  width: 100%;
   max-width: 10em;
-  height: 2px;
+  height: 3px;
 
-  background: white;
+  background: var(--app_color_text);
 }
 
+/* Decorative block on the left side of the application */
 .main .banner-block {
-  width: 10vw;
+  width: 17%;
+  max-width: 10rem;
   height: 100%;
-  background: var(--purple_dark);
+  background: var(--app_color_primary);
 }
 
+/* Where the form is added */
 .main .content {
   position: relative;
 
   display: flex;
   padding: 2rem;
-  width: 60%;
+  width: 80%;
 
   flex-direction: column;
   justify-content: center;
 }
 
+.footer {
+  position: absolute;
+  text-align: center;
+  bottom: 1em;
+}
+
 .footer a {
-  color: var(--purple_light);
+  color: var(--app_color_primary);
 }
 
 @media only screen and (max-width: 700px),
@@ -89,7 +101,6 @@
   }
 
   .main .banner {
-
     width: 100%;
     height: auto;
     flex-direction: column;
@@ -126,7 +137,7 @@
   }
 
   .main .footer a {
-    color: var(--purple_dark);
+    color: var(--app_color_secondary);
   }
 
   .form-grid,
@@ -149,8 +160,10 @@
 }
 
 @media only screen and (max-width:600px) {
+  .main .banner {
+    border: none;
+  }
 
-  /* Hide purple_dark bar */
   .main .banner-block {
     display: none;
   }
