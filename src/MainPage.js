@@ -140,10 +140,12 @@ class MainPage extends Component {
           input:{
             fontSize: 18,
             padding: "1rem",
+            background:"#fbfbfb"
           },
           notchedOutline:{
             border:"1px solid",
-            borderColor:"transparent"
+            borderColor:"transparent",
+            transition:"border 0.2s"
           }
         },
       },
