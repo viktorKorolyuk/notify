@@ -1,13 +1,15 @@
 .main .msg-form {
   position: absolute;
-  /* margin: 2.5%; */
-  /* height: 100%; */
-  /* padding: 25px; */
+  left: 0px;
+  
   display: block;
   padding: 25px;
-  background: #dc004e;
-  border-radius: var(--border_radius);
-  box-shadow: 0px 0px 10px #555;
+  
+  height: 100%;
+  width: 140%;
+
+  color: var(--app_color_text);
+  background: white;
 }
 
 .form-grid{
@@ -15,8 +17,8 @@
 }
 
 .submit-button{
-  width: 70%;
-  /* background-color:var(--green_light) !important; */
+  width: 55%;
+  
   color:white !important;
   font-size: 20px !important;
 }

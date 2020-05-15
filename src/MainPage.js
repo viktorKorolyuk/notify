@@ -248,6 +248,7 @@ class MainPage extends Component {
       <Typography variant='body1'>
         { errorMsg }
       </Typography>
+      <br></br>
       {this.renderMM()}
     </Grid>
   }
@@ -256,7 +257,7 @@ class MainPage extends Component {
     console.log(this.context)
     if (this.context.error) return this.renderError();
     if (this.context.library) return this.renderNotifyForm();
-    return <div className="main">Waiting for MetaMask</div>
+    return <div className="">Waiting for MetaMask</div>
   }
 }
 
