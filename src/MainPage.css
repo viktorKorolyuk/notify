@@ -1,24 +1,24 @@
 .main .msg-form {
   position: absolute;
   left: 0px;
-  
+
   display: block;
   padding: 25px;
-  
+
   height: 100%;
-  width: 140%;
+  width: 100%;
 
   color: var(--app_color_text);
   background: white;
 }
 
-.form-grid{
+.form-grid {
   width: 80% !important;
 }
 
-.submit-button{
+.submit-button {
   width: 55%;
-  
-  color:white !important;
+
+  color: white !important;
   font-size: 20px !important;
 }

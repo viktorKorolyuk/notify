@@ -24,7 +24,7 @@
 
 .main .banner {
   display: flex;
-  width: 70vw;
+  max-width: 980px;
   min-height: 65vh;
 
   color: var(--app_color_text);
@@ -35,6 +35,7 @@
 
   box-sizing: border-box;
   overflow: hidden;
+  margin-bottom: 4rem;
 }
 
 .main .banner .introduction {
@@ -94,16 +95,18 @@
 }
 
 @media only screen and (max-width: 700px),
-(max-height: 700px) {
+(max-height: 600px) {
   .main {
     --border_radius: 0;
     display: block;
   }
 
   .main .banner {
+    flex-direction: column;
     width: 100%;
     height: auto;
-    flex-direction: column;
+    
+    margin: 0 auto;
 
     box-shadow: none;
     box-sizing: border-box;
@@ -162,6 +165,7 @@
 @media only screen and (max-width:600px) {
   .main .banner {
     border: none;
+    border-top: 40px solid var(--app_color_primary);
   }
 
   .main .banner-block {
