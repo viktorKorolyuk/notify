@@ -40,6 +40,7 @@
 
 .main .banner .introduction {
   width: 75%;
+  min-width: 560px;
   margin-bottom: 1rem;
 }
 
@@ -129,6 +130,7 @@
 
   .main .content .introduction {
     width: 100%;
+    min-width: initial !important;
     box-sizing: border-box;
   }
 
@@ -141,6 +143,10 @@
 
   .main .footer a {
     color: var(--app_color_secondary);
+  }
+
+  .form-grid{
+    max-width: none !important;
   }
 
   .form-grid,
